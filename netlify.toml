@@ -1,0 +1,9 @@
+[build]
+  command = "npm run build"        # Vite build command
+  publish = "dist"                 # Deploy dist/ as website
+  functions = "netlify/functions"  # Include functions
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

@@ -1,0 +1,25 @@
+.quote-message {
+  font-size: 1.25rem;
+  font-style: italic;
+}
+
+@media (max-width: 991.98px) { /* Tablet */
+  .quote-message {
+    font-size: 1.08rem;
+    font-style: italic;
+  }
+}
+
+@media (max-width: 767.98px) { /* Mobile */
+  .quote-message {
+    font-size: 0.98rem;
+    font-style: italic;
+  }
+}
+
+@media (max-width: 575.98px) { /* Small Mobile */
+  .quote-message {
+    font-size: 0.92rem;
+    font-style: italic;
+  }
+}

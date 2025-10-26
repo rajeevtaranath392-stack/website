@@ -1,0 +1,223 @@
+// Card Quotes Style
+.bio-quotes.card-quotes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background: none;
+    box-shadow: none;
+    padding: 0;
+    margin: 2rem 0 0 0;
+}
+
+.quote-card1 {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    position: relative;
+}
+
+.slider-quote-card {
+    background: transparent;
+}
+
+.quote-card:hover {
+    box-shadow: 0 8px 32px 0 rgba(44, 62, 80, 0.16);
+}
+
+.quote-card-icon {
+    font-size: 3.2rem;
+    color: #5b5fc7;
+    opacity: 0.85;
+    margin-right: .2rem;
+    flex-shrink: 0;
+    line-height: 1;
+}
+
+.close-quote-card-icon {
+    @extend .quote-card-icon;
+    margin-left: .2rem;
+}
+
+.quote-card-body {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 0 4rem;
+}
+
+.quote-card-text {
+    font-size: 1.13rem;
+    color: #222;
+    font-style: normal;
+    margin-bottom: 1.1rem;
+    line-height: 1.6;
+}
+
+.quote-card-author {
+    font-size: 1.01rem;
+    color: #5b5fc7;
+    font-weight: 500;
+    opacity: 0.85;
+    margin-top: auto;
+    text-align: right;
+    align-self: flex-end;
+}
+
+@media (max-width: 767.98px) {
+    .bio-quotes.card-quotes {
+        flex-direction: column;
+        gap: 1.2rem;
+        align-items: center;
+    }
+
+    .quote-card {
+        min-width: 0;
+        max-width: 100%;
+        padding: 1.3rem 1rem 1.1rem 1rem;
+    }
+
+    .quote-card-icon {
+        font-size: 2.2rem;
+        margin-right: 0.7rem;
+    }
+
+    .quote-card-text {
+        font-size: 1rem;
+    }
+
+    .quote-card-author {
+        font-size: 0.97rem;
+    }
+}
+
+
+
+// Enhanced Timeline
+.bio-quotes.timeline {
+    margin: 2rem 0 0 0;
+    padding: 2rem 0 2rem 0;
+    position: relative;
+    background: linear-gradient(135deg, #f7f9fa 80%, #e3e9f7 100%);
+    border-radius: 1.5rem;
+    box-shadow: 0 4px 24px 0 rgba(44, 62, 80, 0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    align-items: center;
+    overflow: hidden;
+}
+
+// Gradient vertical line
+.bio-quotes.timeline::before {
+    content: "";
+    position: absolute;
+    left: 38px;
+    top: 2.5rem;
+    bottom: 2.5rem;
+    width: 6px;
+    background: linear-gradient(180deg, #b0b8c1 0%, #6c7a89 100%);
+    border-radius: 3px;
+    z-index: 0;
+}
+
+// Larger, gradient dots with shadow
+.timeline-dot {
+    width: 32px;
+    height: 32px;
+    background: linear-gradient(135deg, #fff 60%, #e3e9f7 100%);
+    border: 5px solid #6c7a89;
+    border-radius: 50%;
+    margin-right: 32px;
+    margin-left: 8px;
+    margin-top: 0.1em;
+    box-shadow: 0 4px 16px 0 rgba(44, 62, 80, 0.10);
+    z-index: 2;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.timeline-quote-item:hover .timeline-dot {
+    border-color: #2d3a4a;
+    box-shadow: 0 6px 20px 0 rgba(44, 62, 80, 0.18);
+}
+
+// Modern card spacing and hover effect
+.timeline-quote-item {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 700px;
+    z-index: 1;
+    transition: transform 0.18s, box-shadow 0.18s;
+}
+
+.timeline-quote-item:hover .timeline-content {
+    box-shadow: 0 4px 24px 0 rgba(44, 62, 80, 0.13);
+    background: #f8fafc;
+}
+
+// Card with more padding and subtle background
+.timeline-content {
+    background: #fff;
+    border-radius: 1.2em;
+    box-shadow: 0 2px 10px 0 rgba(44, 62, 80, 0.07);
+    padding: 1.5rem 2rem 1.5rem 2.7rem;
+    font-size: 1.12rem;
+    font-style: italic;
+    color: #2d3a4a;
+    position: relative;
+    flex: 1;
+    min-width: 0;
+    transition: box-shadow 0.18s, background 0.18s;
+}
+
+.timeline-quote-icon {
+    position: absolute;
+    left: 0.7em;
+    top: 0.7em;
+    font-size: 1.6em;
+    color: #b0b8c1;
+    opacity: 0.7;
+    z-index: 1;
+}
+
+.quote-item-author {
+    font-size: 0.98rem;
+    font-style: normal;
+    color: #6c757d;
+    margin-top: 0.5em;
+    text-align: right;
+    z-index: 2;
+}
+
+@media (max-width: 767.98px) {
+    .bio-quotes.timeline {
+        padding: 0.7rem 0 0.7rem 0;
+        border-radius: 1rem;
+        gap: 2rem;
+    }
+
+    .timeline-quote-item {
+        max-width: 100%;
+    }
+
+    .timeline-content {
+        font-size: 0.98rem;
+        padding: 1rem 1rem 1rem 2.2rem;
+    }
+
+    .bio-quotes.timeline::before {
+        left: 18px;
+        width: 4px;
+    }
+
+    .timeline-dot {
+        width: 22px;
+        height: 22px;
+        margin-right: 10px;
+        margin-left: 0;
+        border-width: 4px;
+    }
+}
