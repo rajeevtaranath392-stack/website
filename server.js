@@ -1,7 +1,6 @@
 const express = require("express");
 const fs = require("fs");
 const path = require("path");
-const stripe = new Stripe("sk_test_yourSecretKey");
 const cors = require("cors");
 
 const app = express();
@@ -52,29 +51,6 @@ app.get("/api/images", (req, res) => {
 });
 
 app.use("/images", express.static(IMAGES_DIR));
-
-
-app.post("/create-payment-intent", async (req, res) => {
-    try {
-        const { amount } = req.body;
-        
-        if (!amount || isNaN(amount) || amount <= 0) {
-            return res.status(400).json({ error: "Invalid amount" });
-        }
-
-        const amountInCents = Math.round(amount * 100);
-
-        const paymentIntent = await stripe.paymentIntents.create({
-            amount: amountInCents,
-            currency: "usd",
-        });
-        
-        res.json({ clientSecret: paymentIntent.client_secret });
-    } catch (error) {
-        res.status(500).json({ error: error.message });
-    }
-});
-
 
 app.listen(PORT, () => {
     console.log(`Server running at http://localhost:${PORT}`);
