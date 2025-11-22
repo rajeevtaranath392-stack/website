@@ -1,9 +1,0 @@
-public/
-images/
-dist/
-build/
-node_modules/
-*.png
-*.jpg
-*.jpeg
-*.gif
